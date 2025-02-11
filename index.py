@@ -71,17 +71,248 @@ firstname, lastname, age = 'Damilare', 'Arise', 20
     ii. Tuple tuple() e.g (1, 2, 3, 4, 5)
     iii. range range() e.g range(1, 10)
 4. Boolean Type bool() e.g True, False
-
+5. Mapping Type; dict() e.g {'name': 'Damilare', 'age': 20}
+6. Set type; set() e.g {'Ade',  'Segun'}
+7. binary type; byte, bytearray, memoryview
 """
 
 # num = 10 + 3j
 # print(type(num))
 
 basket = ('Pepper', 'fish', 'rice')
+# print(basket[-1])
 # print(type(basket))
 
 # range10 = range(1, 10, 3)
 # print(list(range10))
 
-isMarried = False
-print(type(isMarried))
+# isMarried = False
+# print(type(isMarried))
+
+student = {
+    "name": 'Damilare',
+    'course': 'Datascience',
+    'isGraduate': True,
+    'grade': 4.0,
+    'amount': 40000
+}
+# print(student['grade'])
+# print(f'Amount is #{student['amount']}')
+
+
+# if student['grade'] > 3:
+#     print('You are a good student')
+# else:
+#     print('You are a bad student')
+
+# student = {'ade', 'segun', 'lola', 'femi'}
+# score = {12, 13, 14, 11, 15}
+# print(score)
+
+# print(ord('o'))
+# print(chr(97))
+
+# var = 'Hello' # ['H', 'e' , 'l' , 'l', 'o']
+# print(var[-1])
+
+# var = bytes([72, 101, 108, 108, 111])
+# print(var)
+
+students = ['Yemi', 'Dare'] # [['Y', 'e', 'm', 'i'], ['D', 'a', 'r', 'e']]
+# print(students[0][3])
+
+
+# Python Operators
+'''
+1. Arithmetic Operator: +, -, *, /, %, //, **
+2. Assignment operator: =, +=, -=, *=, /=, %=, //=, **=
+3. Comparison Operator: ==, !=, >, <, >=, <=
+4. Logical Operator: and, or, not
+5. Identity Operator: is, is not
+6. Membership Operator: in, not in
+
+
+AND Operator
+A ____ B _____Output
+T ____ T _____ T
+T ____ F _____ F
+F ____ T _____ F
+F ____ F _____ F
+
+OR Operator
+A ____ B _____Output
+T ____ T _____ T
+T ____ F _____ T
+F ____ T _____ T
+F ____ F _____ F
+
+Not Operator
+A ____ Output
+T ____ F
+F ____ T
+
+'''
+# print(5 ** 2)
+
+x = 4
+# x-=1 
+# print(x <= 5)
+
+# conditional statement
+
+# if x > 5:
+#     print('Yes')
+# elif x == 5:
+#     print('x is equal 5')
+# else:
+#     print('No')
+
+'''
+0 - 39 -> F
+40 - 44 -> E
+45 - 49 -> D
+50 - 59 -> C
+60 - 69 -> B
+70 - 100 -> A
+
+'''
+
+# score = int(input('Input your score: '))
+# if score >= 70 and score <=100:
+#     print('A')
+# elif score >=60 and score <=69:
+#     print('B')
+# elif score >= 50 and score <= 59:
+#     print('C')
+# elif score >= 45 and score <= 49:
+#     print('D')
+# elif score >= 40 and score <= 44:
+#     print('E')
+# elif score >= 0 and score <= 39:
+#     print('F')
+# else:
+#     print('Invalid score')
+    
+    
+# print('Welcome to MyCalc App')
+# value1 = float(input('First Value: '))
+# value2 = float(input('Second Value: '))
+# print('''
+#       1. Addition
+#       2. Subtraction
+#       3. Multiplication
+#       4. Division
+#       #. Exit
+#     ''')
+# user_choice = input('Enter your choice: ')
+# if user_choice == '1':
+#     result = value1 + value2
+#     print(f'Your answer is {result}')
+# elif user_choice == '2':
+#     result = value1 - value2
+#     print(f'Your answer is {result}')
+
+# else:
+#     print('Invalid choice')
+    
+    
+# val = 5
+# val2 = 4
+# print(val is not val2)
+
+# fruits = ['Banana', 'Mango', 'Orange']
+# print('banana' not in fruits)
+
+
+# balance = 20
+# if balance > 0:
+#     option = input('press 1 to play game or # to exit: ')
+#     if option == '1':
+#         print('playing game...')
+        
+#     elif option == '#':
+#         print('goodbye...')
+#         exit()
+#     else:
+#         print('invalid option')
+# else:
+#     print('Insufficient balance')
+    
+# print('I am still here')
+
+
+# food_available = [
+#     'Rice',
+#     'Beans',
+#     'Yam Porridge',
+#     'Amala',
+#     'Fufu'
+# ]
+
+# compliment = [
+#     'Fish',
+#     'Egg',
+#     'Meat'
+# ]
+
+# user_food = input(f'''
+#              Avaliable foods :-> {food_available} 
+             
+#              Place order; ''')
+
+# user_compliment = input(f'''
+#              Avaliable compliments :-> {compliment} 
+             
+#              Place order; ''')
+
+# if user_food in food_available and user_compliment in compliment:
+#     print('Proceed to make payment, Order available.')
+# elif user_food in food_available:
+#     print('Compliment ordered not avaliable. Choose another or cancel order')
+# elif user_compliment in compliment:
+#     print('Food ordered not avaliable. Choose another or cancel order')
+# else:
+#     print('Order not avaliable')
+
+
+# Python Strings
+# var = 'Hello, Welcome to the to 2nd week, in python class.'
+# name = '123'
+# print(type(var))
+# print(len(var))
+# print(var.upper())
+# print(var.lower())
+# print(name.capitalize())
+# print(var.title())
+
+# print(var[10:20]) #slicing 
+
+# list_var = var.split(',')
+# print(len(list_var))
+# print(list_var)
+
+# list_item = ['Apple', 'Orange', 'Tomato']
+# print(' is '.join(list_item))
+
+# print(name.startswith('D'.lower()))
+# print(var.endswith('class.'))
+
+# print(var.count('to'))
+# print(var.find('to', 10, -1))
+
+# print(name.isnumeric())
+
+
+# Word counter
+# expression = input('Input your sentence: ')
+
+
+score = 0
+question1 = input('What is the capital of Osun state a. Abeokuta b. Ibadan c. Osogbo : ')
+if question1.strip().upper() == 'C':
+    print('Correct') 
+    score +=5
+else:
+    print('Wrong')
+    
+print(f'score is {score}/5')
