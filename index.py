@@ -303,16 +303,201 @@ x = 4
 # print(name.isnumeric())
 
 
+
+# score = 0
+# question1 = input('What is the capital of Osun state a. Abeokuta b. Ibadan c. Osogbo : ')
+# if question1.strip().upper() == 'C':
+#     print('Correct') 
+#     score +=5
+# else:
+#     print('Wrong')
+    
+# print(f'score is {score}/5')
+
+
 # Word counter
 # expression = input('Input your sentence: ')
+# list_exp = expression.strip().split()
+# print(f'The word count is {len(list_exp)}')
+# print(len(expression))
+
+# escape characters
+'''
+\n -> next line
+\t -> tab
+\r -> return
+\\ -> backslash
+\' -> single quote
+
+'''
+
+# text = r'Hello, my name is \t\tJohn Doe. it\'s mine'
+# print(text, end='\t')
+
+# path = r'E:\All_Python\novemberCohort\index.py'
+# # r -> raw string
+# print(path)
 
 
-score = 0
-question1 = input('What is the capital of Osun state a. Abeokuta b. Ibadan c. Osogbo : ')
-if question1.strip().upper() == 'C':
-    print('Correct') 
-    score +=5
-else:
-    print('Wrong')
+# Python Collections/Array
+# 1. LIST: list() or []. a list object is ordered, changeable/mutable, indexed, and allows duplicate value
+
+students = [
+    'Ade Thomas',
+    'Ola Kings',
+    'John Doe',
+    'Femi Badmus',
+    'John Adams'
+] 
+
+# print(students[0])
+# print(students[-3])
+# print(students[0:3]) #slicing
+# print(students[::-1]) #reverse order
+
+# students[0] = 'Adeola'
+# print(students)
+
+
+# students.append('Shola')
+# students.extend(['Shola', 'Dami']) 
+# students.insert(0, 'Shola')
+
+# students.pop(2)
+# students.remove('john')
+# students.clear()
+# del students[0]
+
+numbers = [3, 2, 5, 6, 4, 7, 8, 1, 9]
+
+# numbers.sort(reverse=True)
+# print(numbers)
+
+# students.sort(key=len)
+# print(students)  # sort by length of names
+
+
+# for loop
+
+# print(f'{students[0]} is a student ')
+# print(f'{students[1]} is a student ')
+# print(f'{students[2]} is a student ')
+# for stud in students:
+#     print(f'{stud} is a student ')
+
+
+# register students
+# students = []
+# user = int(input('No of students: '))
+
+# for i in range(user):
+#     name = input(f'Student{i+1} Name: ')
+#     students.append(name)
+
+# print(students)
+
+# for i in range(1 ,11):
+#     print(i)
+#     print('_______')
+
+# [1, 2, 3...,10]
+
+questions = [
+    'What is the capital of Osun state a.) Ibadan b.) Oshogbo',
+    'What is the capital of Oyo state a.) Ibadan b.) Oshogbo',
+    'What is the capital of Lagos state a.) Ibadan b.) Ikeja'
+]
+
+answers = [
+    'b',
+    'a',
+    'b'
+]
+# score = 0
+
+# for ques, ans in zip(questions, answers):
+#     print(ques)
+#     user = input('Answer: ')
+#     if user.strip().lower() == ans:
+#         score += 1
+#         print('Correct✅')
+#     else:
+#         print('Wrong❌')
     
-print(f'score is {score}/5')
+    
+# print(f'You scored {score}/{len(questions)}')
+
+
+# numbers = [3, 2, 5, 6, 4, 7, 8, 1, 9]
+# print(max(numbers))
+# print(min(numbers))
+# print(sum(numbers))
+
+# mean = sum(numbers)/len(numbers)
+# print(mean)
+
+items = [
+    'Toothpaste',
+    'Milk',
+    'Bath Soap'
+]
+
+prices = [
+    100,
+    200,
+    150
+]
+
+
+# for item, price in zip(items, prices):
+#     print(f'{item} is sold for #{price}')
+
+students = [
+    'Ade Thomas',
+    'Ola Kings',
+    'John Doe',
+    'Femi Badmus',
+    'John Adams'
+] 
+
+questions = [
+    'What is the capital of Osun state a.) Ibadan b.) Oshogbo',
+    'What is the capital of Oyo state a.) Ibadan b.) Oshogbo',
+    'What is the capital of Lagos state a.) Ibadan b.) Ikeja'
+]
+
+answers = [
+    'b',
+    'a',
+    'b'
+]
+
+
+
+for student in students:
+    print(f'{student} it is time for your exam.! \n')
+    score = 0
+    for ques, ans in zip(questions, answers):
+        print(ques)
+        user = input('Answer: ')
+        if user.strip().lower() == ans:
+            score += 1
+            print('Correct✅')
+        else:
+            print('Wrong❌')
+    
+    
+    print(f'{student} scored {score}/{len(questions)} \n\n')
+    
+    
+# Assignment 
+'''
+Build a CBT application that would perform the following functionality;
+1. Ask the user for the amount of student taking the test
+2. register all the student
+3. ask the user for the number of questions
+4. allow the user to create the queestions and the equivalent answers base n the number of questions
+5. call the students one after the other to take the test
+6. print out the student with the highiest score and lowest score
+7. print out the mean score.
+'''
