@@ -340,7 +340,7 @@ x = 4
 
 
 # Python Collections/Array
-# 1. LIST: list() or []. a list object is ordered, changeable/mutable, indexed, and allows duplicate value
+# 1. LIST: list() or []. a list object is ordered, changeable/immutable, indexed, and allows duplicate value
 
 students = [
     'Ade Thomas',
@@ -472,22 +472,28 @@ answers = [
     'b'
 ]
 
+marks = [
+    2,
+    3, 
+    1
+]
 
 
-for student in students:
-    print(f'{student} it is time for your exam.! \n')
-    score = 0
-    for ques, ans in zip(questions, answers):
-        print(ques)
-        user = input('Answer: ')
-        if user.strip().lower() == ans:
-            score += 1
-            print('Correct✅')
-        else:
-            print('Wrong❌')
+
+# for student in students:
+#     print(f'{student} it is time for your exam.! \n')
+#     score = 0
+#     for ques, ans, mark in zip(questions, answers, marks):
+#         print(ques)
+#         user = input('Answer: ')
+#         if user.strip().lower() == ans:
+#             score += mark
+#             print('Correct✅')
+#         else:
+#             print('Wrong❌')
     
     
-    print(f'{student} scored {score}/{len(questions)} \n\n')
+#     print(f'{student} scored {score}/{len(questions)} \n\n')
     
     
 # Assignment 
@@ -501,3 +507,442 @@ Build a CBT application that would perform the following functionality;
 6. print out the student with the highiest score and lowest score
 7. print out the mean score.
 '''
+
+# 2. Tuple: () or tuple(). It is a collection method that is  ordered, indexed, allows duplicate value but unchangeable/mutable
+
+emails = (
+    'femi@gmail.com',
+    'john@gmail.com',
+    'john@gmail.com',
+    'mercy@gmail.com'
+)
+# print(emails[0:2])
+
+# emails[0] = 'ade@gmail.com' #'tuple' object does not support item assignment
+# print(emails.count('john@gmail.com'))
+# print(emails.index('femi@gmail.com'))
+
+emails_list = list(emails)
+emails_list[0] = 'ade@gmail.com'
+# print(emails_list)
+
+# emails = tuple(emails_list)
+# print(emails)
+
+# unpacking
+# *all, = emails
+# print(all)
+
+first, *all, last = emails
+# print(all)
+
+
+# questions_answers = [
+#     ('What is the capital of Osun state a.) Ibadan b.) Oshogbo', 'b', 5),
+#     ('What is the capital of Oyo state a.) Ibadan b.) Oshogbo', 'a', 10),
+# ]
+
+# score = 0
+# for quest, ans, other in questions_answers:
+#     print(quest)
+#     user = input('answer: ')
+#     if user == ans:
+#         score += other
+        
+
+
+# 3, set: {}, set(): It is a collection method that is unordered, unindexed, no duplicate value and mutable
+
+names = {
+    'femi',
+    'john',
+    'john',
+    'mercy',
+    'ola',
+    'ade'
+}
+
+# *all, = names
+# print(all)
+
+
+# names.add('ola')
+# names.update(['ola', 'yemi'])
+# names.remove('John') 
+# names.discard('John')
+# print(names.pop())
+# print(names)
+
+# names = [
+#     'femi',
+#     'john',
+#     'mercy',
+#     'ola',
+#     'ade'
+# ]
+# for num, name in enumerate(names, start=1):
+#     print(f"{num}.) {name}")
+
+# x = 16
+# for name in names:
+#     print(x, name)
+#     x+=1
+    
+
+# guess = set(names).pop()
+# user = input('Your guess: ')
+# if user == guess:
+#     print('You won')
+# else:
+#     print('You lost')
+    
+
+
+# numbers_str = [ str(num) for num in range(100)]
+# for num in range(100):
+#    numbers_str.append(str(num))
+
+# print(set(numbers_str))
+
+# random_numbers = []
+# set_numbers_str = set(numbers_str)
+# for x in range(10):
+#    random_numbers.append(set_numbers_str.pop())    
+   
+# print(random_numbers)
+
+# print('Guess 3 numbers that would be part of our selected numbers between 0-100')
+# user_guesses = []
+# for i in range(3):
+#     user = input('Your guess: ')
+#     user_guesses.append(user)
+    
+    
+# print(random_numbers)
+# print(user_guesses)
+
+# if set(user_guesses).issubset(set(random_numbers)):
+
+# if any([guess in random_numbers for guess in user_guesses ]):
+#     print('You won')
+# else:
+#     print('You lost')
+
+
+
+
+
+# print(any([0 , False, None]))
+
+
+# numbers = [i for i in range(5) ]  #List Comprehension
+# for i in range(5):
+#     numbers.append(i)
+    
+# print(numbers)
+
+
+# names = [ input(f'Name{i}: ') for i in range(3) ]
+
+# for i in range(3):
+#     name = input('Name: ')
+#     names.append(name)
+# print(names)
+
+
+
+setA = {3, 4, 2, 1, 6, 7, 9, 8, 0, 5}
+setB = {3, 4, 7, 0}
+setC = {11, 14, 12, 10, 3, 5}
+
+# new_set =  setA.union(setC)
+# new_set =  setA.intersection(setC)
+# new_set =  setA.difference(setC)
+# new_set =  setA.symmetric_difference(setC)
+# print(new_set)
+
+# setA.intersection_update(setB)
+# setA.difference_update(setB)
+# print(setA)
+
+# setA.update(setC)
+# print(setA)
+
+# print(setA.issuperset(setB))
+# print(setB.issubset(setA))
+# print(setA.isdisjoint(setC))
+
+
+# students = [
+#     'ade',
+#     'ola',
+#     'femi'
+# ]
+
+# scores = [
+#     23,
+#     34,
+#     12
+# ]
+
+# max_score = max(scores)
+# ind_max_score = scores.index(max_score)
+
+# student_max = students[ind_max_score]
+
+
+# 4. Dictionary: {key:value}, dict(key=value); it is ordered, it doesnt allow duplicate key, it is changeable.
+ 
+car = {
+    'brand': 'Toyota',
+    'model': 'Camry',
+    'year': 2015,
+    'color': 'blue',
+    'owner': {
+        'name': 'John',
+        'age': 30,
+        'address': {
+            'street': '123 Main St',
+            'city': 'New York',
+            'state': 'NY'
+        }
+    }
+}
+
+
+# print(car['color'])
+# car['years'] = 2018
+# print(car)
+
+# print(car['owner']['address']['city'])
+
+# for key in car.keys():
+#     print(key)
+
+# print(car.values())
+# print(car.items())
+
+# for key , value in car.items():
+#     print(f'{key} => {value}')
+
+
+# questions = {
+#     'What is the capital of Osun state a.) Ibadan b.) Oshogbo' :'a',
+#     'What is the capital of Oyo state a.) Ibadan b.) Oshogbo' : 'b',
+#     'What is the capital of Lagos state a.) Ibadan b.) Ikeja' : 'b'
+# }
+
+# for ques, ans in questions.items():
+#     print(ques)
+#     user = input('Answer: ')
+#     if user == ans:
+#         print('Correct')
+#     else:
+#         print('Wrong')
+
+# print(car.get('model', 'Invalid key') )
+# car.update({'registered': False})
+# print(car.pop('years', 'Invalid key'))
+# car.clear()
+# car['model'] = 'Benz'
+# print(car)
+
+[]
+
+[
+    {},
+    {}
+]
+
+# students = []
+# for i in range(3):    
+#     student = {
+#         'name': input('Name: '),
+#         'matNo': input('Matric No: '),
+#         'score': 0
+#     }
+#     students.append(student)
+
+# print(students)
+
+{
+    'id1':{},
+    'id2': {}
+}
+
+# students = dict()
+
+# for i in range(3):
+#     student = {
+#         'name': input('Name: '),
+#         'score': 0
+#     }
+#     # students.update({f'00{i+1}': student})
+#     students[f'00{i+1}'] = student
+    
+# print(students)
+
+# JSON -> JavaScript Object Notation
+[],
+{},
+[{}]
+# API -> Application Programming Interface
+
+# import requests
+
+# url = "https://fakestoreapi.com/products/"
+# response = requests.get(url)
+# data = response.json()
+# print(data[0])
+# for key, value in data[0].items():
+#     print(f'{key} => {value}')
+
+# product_names = []
+# product_prices = []
+# names_prices_obj = {}
+# for each in data:
+    # print(each['title'])
+    # product_names.append(each['title'])
+    # product_prices.append(each['price'])
+    # names_prices_obj[each['title']] = each['price']
+    
+# ind_max = product_prices.index(max(product_prices)) 
+# print(product_names[ind_max], product_prices[ind_max])
+
+# print(max(names_prices_obj, key=names_prices_obj.get))
+
+# data = {
+#     'ade': 20,
+#     'ola': 30,
+#     'femi': 40
+# }
+# print(max(data, key=data.get))
+
+
+
+# While loop 
+
+# x = 10
+# while x > 0:
+#     print(x)
+    
+#     x-=1
+
+# x = 0
+# while x < 10:
+#     print(x)
+#     x+=1
+
+# x = 5
+
+# while x > 0 and x < 15:
+#     print(x)
+#     x-=1
+
+
+# ticket =  10
+# while ticket > 0:
+#     age = int(input('Age: '))
+#     if age < 18:
+#         print('You are not eligible!')
+#         continue
+    
+#     ticket-=1
+#     print('Total ticket is ', ticket)
+
+
+students = []
+
+# while True:
+#     student = {
+#         'fullname': input('Enter your name: '),
+#         'matNo': input('Enter your matric no: ')
+#     }
+#     students.append(student)
+#     user = input('Press enter to continue registration or 1 to stop: ')
+#     if user != '1':
+#         continue
+#     else:
+#         break
+    
+# print(students)
+
+
+# ussd = input('ussd code: ')
+# while ussd != '*312#':
+#     print('Invalid ussd code')
+#     ussd = input('ussd code: ')
+#     continue
+
+# print('Valid ussd code')
+
+
+# PYTHON FUNCTION
+'''
+1. Declaration  Stage (Naming)
+2. Definition Stage (performance)
+3. Invocation Stage (calling)
+
+'''
+# def dance():
+#     print('I am dancing')
+
+# dance()
+
+
+def addition():
+    val1 = float(input('Value 1: '))
+    val2 = float(input('Value 2: '))
+    result = val1 + val2
+    print(f'Ans = {result}')
+    proceed()
+    
+def subtraction():
+    val1 = float(input('Value 1: '))
+    val2 = float(input('Value 2: '))
+    result = val1 - val2
+    print(f'Ans = {result}')
+    proceed()
+    
+def multiply():
+    val1 = float(input('Value 1: '))
+    val2 = float(input('Value 2: '))
+    result = val1 * val2
+    print(f'Ans = {result}')
+    proceed()
+    
+def proceed():
+    user = input('Press enter to continue or 1 to exit: ')
+    if user != '1':
+        home()
+    else:
+        print('Exiting...')
+        exit()
+    
+def home():
+    print('''
+          
+        My Calculator
+        
+        1. Addition
+        2. Subtraction
+        3. Muplication
+        #. Exit
+    ''')
+    user = input('Input your choice: ').strip()
+    if user == '1':
+        addition()
+    elif user == '2':
+        subtraction()
+    elif user == '3':
+        multiply()
+    elif user == '#':
+        print('Exit')
+        exit()
+    else:
+        print('Invalid choice')
+        home() #Recurssive function
+
+home()
+
+
