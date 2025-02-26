@@ -921,7 +921,6 @@ def proceed():
     
 def home():
     print('''
-          
         My Calculator
         
         1. Addition
@@ -943,6 +942,113 @@ def home():
         print('Invalid choice')
         home() #Recurssive function
 
+# home()
+
+# unparametized function
+def callme():
+    print('Hello Damilare')
+
+# callme()
+
+# Parametized function
+def callme(name):
+    print(f'Hello {name}')
+
+# callme('Damilare')
+
+
+# Default parameter
+def add(val1, val2 =6, val3 = 45):
+    print(val1 + val2)
+    
+# add(23, 40)
+
+
+# GLobal and local variable
+
+val = 5 #global variable
+
+# def add():
+#     global val1 
+#     val1 = 10 #local variable
+#     print(val1 + val)
+    
+#     sub()
+
+# def sub():
+#     print(val1 - val)
+
+# add()
+
+# CRUD => Create, Read, Update, Delete
+all_student = []
+question_answer = []
+
+def home():
+    
+    print('''
+        1. Add student
+        2. Add question and answer
+        3. View students
+        4. View questions and answers
+        5. Take Test
+        6. Edit student info
+        7. Edit question
+        8. Remove student
+        9. Remove question
+        #. Exit
+    
+    ''')
+    user = input('Choice: ')
+    if user == '1':
+        add_student()
+    elif user == '2':
+        add_quest_ans()
+    elif user == '3':
+        view_student()
+
+
+def add_student():
+    global all_student
+    
+    while True:
+        student = {
+            'name': input('Name: '),
+            'matno': input('Matric No: '),
+            'score': 0
+        }
+        all_student.append(student)
+        
+        print('''
+            1. Stop 
+            2. Continue
+        ''')
+        
+        user = input('Choice: ')
+        if user == '2':
+            continue
+        elif user == '1':
+            break
+        else:
+            print('Invalid option')
+        
+    action()
+    
+        
+
+def view_student():
+    print('All students: ',all_student)
+    action()    
+
+def add_quest_ans():
+    pass
+
+def action():
+    user = input('Press enter to go back to home or 1 to exit app: ')
+    if user == '1':
+        print('Goodbye...')
+        exit()
+    else: 
+        home()
+
 home()
-
-
