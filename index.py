@@ -1007,7 +1007,6 @@ def home():
     elif user == '3':
         view_student()
 
-
 def add_student():
     global all_student
     
@@ -1033,9 +1032,7 @@ def add_student():
             print('Invalid option')
         
     action()
-    
-        
-
+     
 def view_student():
     print('All students: ',all_student)
     action()    
@@ -1051,4 +1048,142 @@ def action():
     else: 
         home()
 
+# home()
+
+
+# return function
+
+def greet():
+    return 'Hello'
+
+var = greet()
+# print(var)
+
+# arr = ['yellow', 'green']
+# print(arr.pop())
+# print(arr)
+
+
+def evaluate(val:int | float = 0) -> int | float:
+    '''
+    This function evaluates the value of the input
+    '''
+    
+    result = add(val) ** multiply(val)
+    return result
+    
+def add(val):
+    return 10 + val
+
+def multiply(val):
+    return 10 * val
+
+
+# print('Evaluated Value: ', evaluate(2))
+
+# Lambda/anonymous function
+# add = lambda: 'Hello' 
+# add = lambda name: 'Hello ' + name 
+# add = lambda x, y: x + y
+# print(add('Dami'))
+
+
+# def var(item_name, *extras, **properties):
+#     print(item_name)
+#     print(extras)
+#     print(properties)
+
+# var('shoe', 'shoe lace', 'shoe box', color='red', size=10, price=2000)
+
+# Todo App
+
+
+task = []
+def home():
+    print('''
+        Welcome to Todo App
+        
+        1. Add Task
+        2. View Task
+        3. Edit Task
+        4. Remove Task
+        5. Exit
+    ''')
+    user = input('Choice: ')
+    if user == '1':
+        add_task()
+    elif user == '2':
+        view_task()
+    elif user == '3':
+        edit_task()
+    elif user == '4':
+        remove_task()
+    elif user == '5':
+        print('Goodbye...')
+        exit()
+    else:
+        print('Invalid choice')
+        home()
+        
+def add_task():
+    global task
+    while True:
+        task_name = input('Enter task name: ')
+        task.append(task_name)
+        
+        print('''
+            Task added successfully  
+              
+            1. Stop 
+            2. Continue
+        ''')
+        
+        user = input('Choice: ')
+        if user == '2':
+            continue
+        elif user == '1':
+            break
+        else:
+            print('Invalid option')
+    home()
+
+def view_task(for_operations=False):
+    
+    for num, each in enumerate(task, start=1):
+        print(f'{num}. {each}')
+    if for_operations:
+        return
+    home()
+
+def edit_task():
+    global task
+    
+    view_task(for_operations=True)
+    user = int(input('Enter the number of the task you want to edit: '))
+    new_task = input('Enter the new task name: ')
+    task[user-1] = new_task
+    print('Task updated successfully')
+    home()
+    
+def remove_task():
+    global task
+    
+    view_task(for_operations=True)
+    user = int(input('Enter the number of the task you want to remove: '))
+    task.pop(user-1)
+    print('Task removed successfully')
+    home()
+      
+    
 home()
+
+
+# question_answer = [
+#     {'what is my name': 'Damilare'},
+#     {'what is my age': 20}
+# ]
+# x = 1
+# for ques in question_answer:
+#     for key, value in ques.items():
+#         print(f'{x}. {key}')
+#         x +=1
